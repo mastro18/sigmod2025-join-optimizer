@@ -86,18 +86,6 @@ The final version also includes parallel execution support in the join path.
 
 The phased design keeps synchronization simple while still exploiting multiple cores effectively.
 
-## What We Implemented
-
-The final codebase is centered around a practical high-performance join engine tailored to the SIGMOD contest format.
-
-- We implemented a hash-join execution path that evaluates the contest plans directly from the provided pipeline representation.
-- We used an unchained hash table as the core lookup structure for integer join keys in order to reduce lookup overhead during probing.
-- We parallelized the probe phase so that multiple worker threads can process page batches concurrently.
-- We preserved a column-oriented intermediate format, which keeps execution closer to the structure of the input data and avoids unnecessary row materialization during join processing.
-- We kept support for cached execution, allowing repeated runs to avoid rebuilding the full correctness-checking workflow every time.
-
-In practical terms, the final implementation takes the plan generated from the benchmark workload, executes scans and joins over the selected columns, builds a compact hash structure on the build side of the join, probes it from the other side in parallel, and produces the requested output columns in contest-compatible format.
-
 ## Build
 
 Run all commands from the project root.
