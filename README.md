@@ -65,14 +65,13 @@ This follows the assignment requirement to avoid unnecessary copies when the ori
 
 ### Unchained Hash Table
 
-The final join path uses a custom `UnchainedHashTable` for integer join keys.
+The final join path uses a custom `UnchainedHashTable` for integer join keys. Each directory slot also stores a small 16-bit bloom filter to reject many non-matching probes early.
 
 - build-side tuples are collected as `(key, row-position)` pairs
 - entries are organized into a compact contiguous array
 - a directory indexed by hash prefix points to contiguous ranges of entries
-- each directory slot also stores a small 16-bit bloom filter to reject many non-matching probes early
 
-![Unchained Hash Table](images/image1.png)
+![Unchained Hash Table](image/image1.png)
 
 This layout avoids linked-list traversal and improves locality during probing, which is one of the main reasons it performs better than a more naive chained design for this workload.
 
