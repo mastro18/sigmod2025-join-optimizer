@@ -1,14 +1,14 @@
-# SIGMOD 2025 Contest Submission
+# SIGMOD 2025 Join Optimizer
 
 ## Overview
 
-This repository contains our final implementation for the SIGMOD 2025 Programming Contest, based on the official contest repository:
+This repository contains a personal academic project developed for coursework, inspired by the SIGMOD 2025 Programming Contest and based on the official contest repository:
 
 https://github.com/SIGMOD-25-Programming-Contest/contest-sigmod2025
 
 The current version of the project documents only the implementation that is still active in the codebase. Older experimental variants such as Robin Hood, Hopscotch, and Cuckoo hashing are not part of the current build flow and are therefore omitted from this README.
 
-Our work focuses on optimizing the contest execution engine for repeated join-query evaluation on the IMDB workload. The goal of the final version is not only correctness, but also reduced runtime through better data organization, efficient hash-based joins, parallel probing, and a cache-assisted execution flow for repeated experiments.
+The work focuses on optimizing a join execution engine for repeated evaluation on the IMDB workload. The goal of the final version is not only correctness, but also reduced runtime through better data organization, efficient hash-based joins and parallel probing
 
 ## Current Implementation
 
