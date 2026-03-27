@@ -141,7 +141,7 @@ On Unix systems, the repository also provides cache-based execution targets for 
 ## Repository Layout
 
 ```text
-pro_sigmod/
+sigmod2025-join-optimizer/
 ├── include/        # headers for execution, storage, and helper structures
 ├── job/            # JOB benchmark SQL workload
 ├── src/            # implementation of the final engine
